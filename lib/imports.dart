@@ -6,7 +6,7 @@ export 'src/widgets/widgets.dart';
 export 'src/services/services.dart';
 export 'routes/routes.dart';
 export '/weather_app.dart';
-export '/constants/app_constants.dart';
+export 'constants/app_colors.dart';
 export '/constants/app_spaces.dart';
 /* packages */
 
