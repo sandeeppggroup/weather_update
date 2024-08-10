@@ -19,7 +19,9 @@ class AdminDashboardScreen extends StatelessWidget {
         elevation: 0,
         actions: [
           IconButton(
-            onPressed: () => showLogoutDialog(context),
+            onPressed: () async {
+              showLogoutDialog(context, true);
+            },
             icon: const Icon(Icons.logout, color: Colors.white, size: 24),
             tooltip: 'Logout',
           ),

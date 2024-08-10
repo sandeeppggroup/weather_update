@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newtok_technologies_mt/models/weather_model.dart';
 import 'package:newtok_technologies_mt/providers/weather_provider.dart';
 import 'package:newtok_technologies_mt/services/excel_service.dart';
-import 'package:newtok_technologies_mt/ui/user/weather_report_screen.dart';
+import 'package:newtok_technologies_mt/ui/user/weather_report/weather_report_screen.dart';
 import 'package:provider/provider.dart';
 
 class UploadExcelScreen extends StatefulWidget {

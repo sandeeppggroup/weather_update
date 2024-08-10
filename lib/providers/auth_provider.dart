@@ -6,6 +6,7 @@ import 'package:newtok_technologies_mt/models/user_model.dart';
 import 'package:newtok_technologies_mt/services/auth_service.dart';
 import 'package:newtok_technologies_mt/ui/admin/admin_dashboard/admin_dashboard_screen.dart';
 import 'package:newtok_technologies_mt/ui/user/user_dashboard/user_dashboard_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthProvider extends ChangeNotifier {
   final AuthService _authService = AuthService();
@@ -15,6 +16,8 @@ class AuthProvider extends ChangeNotifier {
 
   Future<void> signIn(
       String email, String password, BuildContext context) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
     _currentUser = await _authService.signIn(email, password);
 
     if (_currentUser != null) {
@@ -28,9 +31,11 @@ class AuthProvider extends ChangeNotifier {
     }
 
     if (_currentUser!.isAdmin) {
+      preferences.setBool('admin', true);
       Fluttertoast.showToast(
           msg: "You have successfully logged in as admin",
           toastLength: Toast.LENGTH_LONG);
+
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
@@ -39,6 +44,7 @@ class AuthProvider extends ChangeNotifier {
         (route) => false, // Remove previous routes
       );
     } else {
+      preferences.setBool('user', true);
       Fluttertoast.showToast(
           msg: "You have successfully logged in as user",
           toastLength: Toast.LENGTH_LONG);

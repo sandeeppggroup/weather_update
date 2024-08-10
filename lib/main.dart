@@ -5,7 +5,8 @@ import 'package:newtok_technologies_mt/providers/location_provider.dart';
 import 'package:newtok_technologies_mt/providers/user_report_provider.dart';
 import 'package:newtok_technologies_mt/providers/weather_provider.dart';
 import 'package:newtok_technologies_mt/ui/admin/admin_dashboard/admin_dashboard_screen.dart';
-import 'package:newtok_technologies_mt/ui/shared/login_screen.dart';
+import 'package:newtok_technologies_mt/ui/shared/login/login_screen.dart';
+import 'package:newtok_technologies_mt/ui/shared/splash/splash_screen.dart';
 import 'package:newtok_technologies_mt/ui/user/user_dashboard/user_dashboard_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -30,9 +31,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Your App',
         debugShowCheckedModeBanner: false,
-        initialRoute: '/login',
+        initialRoute: '/',
         routes: {
-          '/': (context) => const LoginScreen(),
+          '/': (context) => const SplashScreen(),
           '/login': (context) => const LoginScreen(),
           '/admin': (context) => const AdminDashboardScreen(),
           '/user': (context) => const UserDashboardScreen(),

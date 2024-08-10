@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newtok_technologies_mt/providers/location_provider.dart';
-import 'package:newtok_technologies_mt/ui/user/upload_excel_screen.dart';
+import 'package:newtok_technologies_mt/ui/user/upload_excel/upload_excel_screen.dart';
 import 'package:newtok_technologies_mt/ui/user/user_dashboard/widgets/location_list_view_widget.dart';
 import 'package:newtok_technologies_mt/widgets/show_logoutout_dialog_widget.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +34,7 @@ class _UserDashboardScreenState extends State<UserDashboardScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () => showLogoutDialog(context),
+            onPressed: () => showLogoutDialog(context, false),
             icon: const Icon(Icons.logout),
             tooltip: 'Logout',
             color: Colors.white,
